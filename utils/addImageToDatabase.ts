@@ -1,15 +1,13 @@
 import { initializeApp } from 'firebase/app'
 import {
   getStorage,
-  uploadBytes,
   getDownloadURL,
   ref,
   uploadBytesResumable,
-  getBlob,
 } from 'firebase/storage'
 import { uuid } from 'uuidv4'
 import { IImageProps } from '../models'
-import { firebaseConfig } from '../services/firebaseEnv'
+import { firebaseConfig } from '../services/firebaseConfig'
 
 export const addImageToDatabaseAndReturnPhotoUrl = async (
   image: IImageProps,
