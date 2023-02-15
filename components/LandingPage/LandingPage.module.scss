@@ -1,0 +1,214 @@
+@import '../../styles/colors';
+
+.main {
+  font-family: 'Teko', sans-serif;
+  color: $white;
+
+  .background {
+    background: linear-gradient(180deg, #970d2f, #000000);
+    background-size: 600% 600%;
+
+    // uncomment this if you want activate gradient animations (rest @keyframes at the end of file)
+    // -webkit-animation: AnimationName 40s ease infinite;
+    // -moz-animation: AnimationName 40s ease infinite;
+    // -o-animation: AnimationName 40s ease infinite;
+    // animation: AnimationName 40s ease infinite;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    height: 10rem;
+    min-width: 25%;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 1rem;
+  }
+
+  .parallax {
+    margin-right: 15%;
+  }
+
+  .sticky {
+    margin-left: 15%;
+  }
+
+  .blue {
+    background-color: #5b65ad;
+    color: white;
+  }
+
+  .offer {
+    width: 40vw;
+    height: 100%;
+    margin-right: 10%;
+    gap: 5px;
+
+    li {
+      font-family: 'Teko Light';
+      font-size: 40px;
+      color: $white;
+      text-decoration: none;
+      padding: 10px 0;
+      text-overflow: clip;
+      background-color: $luxury;
+      opacity: 0.9;
+      padding: 0 8px;
+      margin: 36px 0;
+      list-style-type: none;
+    }
+  }
+
+  .info-section {
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-weight: bold;
+      font-size: 2em;
+      margin-bottom: -80px;
+      margin: 0;
+
+      p {
+        margin: 0;
+        font-size: 5em;
+      }
+    }
+  }
+
+  .image-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+      width: 50vw;
+      height: auto;
+      opacity: 1;
+      cursor: pointer;
+      z-index: 20000000000000;
+      object-fit: cover;
+
+      &:hover {
+        opacity: 0.7;
+        transition: opacity 0.4s ease-in-out;
+      }
+    }
+  }
+
+  .call-to-action-buttons {
+    &__container {
+      margin-top: 30px;
+      width: 100vw;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+
+      a {
+        font-family: 'Teko Regular';
+        display: flex;
+        background-color: none;
+        width: 50vw;
+        font-size: 50px;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        cursor: pointer;
+        letter-spacing: 2px;
+        text-decoration: underline;
+        transition: 0.7s ease-in-out;
+        color: $white;
+
+        &:hover {
+          letter-spacing: 8px;
+        }
+      }
+    }
+  }
+
+  .contact {
+    font-family: 'Teko Bold';
+    margin-left: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    font-size: 6em;
+    width: 50vw;
+
+    &__details {
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2em;
+
+      span {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-size: 1em;
+        gap: 1em;
+
+        a {
+          text-decoration: none;
+          font-size: 2em;
+          color: $white;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .footer {
+        color: $white;
+        font-size: 0.5em;
+        margin-top: 20px;
+
+        padding: 10px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .card {
+    width: 40%;
+  }
+
+  .parallax {
+    margin-right: 1.5rem;
+  }
+
+  .sticky {
+    margin-left: 1.5rem;
+  }
+}
+
+// if you want animations of background gradient - uncomment it!
+// @keyframes AnimationName {
+//   0% {
+//     background-position: 77% 0%;
+//   }
+//   50% {
+//     background-position: 24% 100%;
+//   }
+//   100% {
+//     background-position: 77% 0%;
+//   }
+// }

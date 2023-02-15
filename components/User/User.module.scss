@@ -1,0 +1,30 @@
+@import '../../styles/colors';
+
+.user {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Teko Bold';
+  padding: 30px;
+  color: $white;
+
+  h2 {
+    font-size: 5em;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Teko Regular';
+    letter-spacing: 5px;
+
+    span {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 0;
+      color: $light-grey;
+    }
+  }
+}

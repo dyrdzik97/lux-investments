@@ -1,0 +1,91 @@
+@import '../../styles/colors';
+
+$duration: 2s;
+$text-color: rgba(255, 255, 255, 0.3);
+$bgr-color: #333;
+
+.sidebar {
+  overflow: scroll;
+  background-color: $luxury;
+  position: fixed;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  z-index: 1899;
+  font-size: 3em;
+  font-weight: bold;
+  color: $lighter-grey;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px 30px;
+
+    a,
+    span {
+      width: 100%;
+      cursor: pointer;
+      padding: 15px 6px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: $white;
+
+      p {
+        font-size: 25px;
+        color: $grey;
+        margin: 0;
+        opacity: 0.3;
+      }
+
+      &:hover {
+        background: #222 -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(#222),
+            to(#222),
+            color-stop(0.5, #fff)
+          ) 0 0 no-repeat;
+        -webkit-background-size: 150px;
+        color: $text-color;
+        -webkit-background-clip: text;
+        -webkit-animation-name: sidebar__content;
+        -webkit-animation-duration: $duration;
+        -webkit-animation-iteration-count: infinite;
+        text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+
+        p {
+          opacity: 1;
+          transition: all 0.2s cubic-bezier(0.25, 0.8, 0.5, 1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes sidebar__content {
+  0%,
+  10% {
+    background-position: -1000px;
+  }
+  20% {
+    background-position: top left;
+  }
+  90% {
+    background-position: top right;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+@media (max-width: 780px) {
+  .sidebar {
+    width: 100vw;
+  }
+}

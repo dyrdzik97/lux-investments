@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+  color: #000;
+  font-family: 'Teko', sans-serif;
+  font-size: 25px;
+  background-color: $luxury;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  z-index: 0;
+}
+
+@media (max-width: 780px) {
+  .main {
+    overflow: scroll;
+  }
+}
