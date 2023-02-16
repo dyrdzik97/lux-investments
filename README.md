@@ -17,4 +17,4 @@ Further improvements (v2.0):
 
 ## Live demo available on:
 
-🔥 💰 https://lux-investments-fpaaw0zae-dyrdzik97.vercel.app/
+🔥 💰 https://lux-investments.vercel.app/
