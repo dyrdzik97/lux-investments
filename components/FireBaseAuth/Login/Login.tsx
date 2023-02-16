@@ -78,22 +78,23 @@ export const Login = ({ sx }: LoginProps): JSX.Element => {
                 />
               </FormGroup>
               <Grid>
-                <Button type="submit" sx={{ mt: 1, bg: '#3F88F5' }}>
+                <Button type="submit" sx={{ mt: 1, bg: '#000' }}>
                   Log in
                 </Button>
                 <Button
                   type="button"
-                  sx={{ mt: 1, bg: 'grey' }}
+                  sx={{ mt: 1, bg: '#3F88F5' }}
                   onClick={() => signInWithGoogle()}
                 >
-                  Log with google
+                  Log in with google
                 </Button>
                 <Link href="/forgotPassword">
                   <Text
                     sx={{
                       display: 'inline-block',
                       textDecoration: 'none',
-                      color: '#3F88F5',
+                      color: '#000',
+                      fontSize: '12px',
                     }}
                   >
                     Forgot password? Remind me!
@@ -104,7 +105,8 @@ export const Login = ({ sx }: LoginProps): JSX.Element => {
                     sx={{
                       display: 'inline-block',
                       textDecoration: 'none',
-                      color: '#3F88F5',
+                      color: '#000',
+                      fontSize: '12px',
                     }}
                   >
                     Need an account? Please, Sign Up
