@@ -8,7 +8,7 @@ const Catalog = ({ offers }: any) => {
   return <ProductsList offers={offers} />
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetStaticProps = async () => {
   const data = await getDocs(collection(db, 'Offers')).then((querySnapshot) => {
     return querySnapshot.docs.map((doc) => doc.data())
   })
