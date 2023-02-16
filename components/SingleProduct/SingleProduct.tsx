@@ -2,16 +2,17 @@ import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
 import { db } from '../../services/firebaseConfig'
 import styles from './SingleProduct.module.scss'
 import { useAuth } from '../FireBaseAuth/context/AuthContext'
-import { Button } from 'theme-ui'
+import { Button, Message } from 'theme-ui'
 import BackButton from '../BackButton/BackButton'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const SingleProduct = ({ product }: any) => {
+  const [successMessage, setSuccessMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const router = useRouter()
-
   const { user } = useAuth()
-
-  const { offerName, offerOwner, image, offerDescription, price } = product
+  const { offerName, offerOwner, offerDescription, price } = product
 
   const onDeleteProduct = async () => {
     const offers = await getDocs(collection(db, 'Offers', '/'))
@@ -22,10 +23,15 @@ const SingleProduct = ({ product }: any) => {
 
     await deleteDoc(docRef)
       .then(() => {
-        router.push('/catalog')
+        setSuccessMessage('Offer deleted')
       })
       .catch((error) => {
-        console.log(error)
+        setErrorMessage(error)
+      })
+      .finally(() => {
+        setTimeout(() => router.push('/catalog'), 1000)
+        setSuccessMessage('')
+        setErrorMessage('')
       })
   }
   return (
@@ -43,6 +49,7 @@ const SingleProduct = ({ product }: any) => {
             <p>{offerDescription}</p>
           </div>
           {user && (
+            // TODO prevent visibility of this button only when userId === userId on this offer
             <Button className={styles.delete__button} onClick={onDeleteProduct}>
               Delete product
             </Button>
@@ -70,6 +77,8 @@ const SingleProduct = ({ product }: any) => {
         />
       </div>
       <BackButton />
+      {successMessage !== '' && <Message>{successMessage}</Message>}
+      {errorMessage !== '' && <Message>{errorMessage}</Message>}
     </div>
   )
 }
