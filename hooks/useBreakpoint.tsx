@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useState } from 'react'
+import {
+  ChangeEvent,
+  DispatchWithoutAction,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import { testMobileDevice } from '../utils/testMobileDevice'
 
 export const useBreakpoint = () => {
@@ -14,7 +20,7 @@ export const useBreakpoint = () => {
     setIsMobile(testMobileDevice())
   }, [])
 
-  const updateTarget = useCallback((event) => {
+  const updateTarget = useCallback((event: { matches: boolean }) => {
     const isLandscape = window.orientation > 0
 
     setIsMobile(isLandscape || event.matches)
