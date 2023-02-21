@@ -12,7 +12,6 @@ const LandingPageMobile = (): JSX.Element => {
 
   return (
     <main className={styles.main}>
-      <div className={styles.background} />
       <HeroHeader />
       <div className={styles['info-section']} id={'info-section'}>
         <span>
@@ -80,7 +79,7 @@ const LandingPageMobile = (): JSX.Element => {
       </div>
       <div className={styles.footer}>
         Proudly delivered by{' '}
-        <Link href={'https://github.com/dyrdzik97'}>dyrdzik97</Link>© Copyright
+        <Link href={'https://github.com/dyrdzik97'}> dyrdzik97</Link>© Copyright
         2023
       </div>
     </main>

@@ -10,9 +10,15 @@
   color: #000;
   font-family: 'Teko', sans-serif;
   font-size: 25px;
-  background-color: $luxury;
+  background: linear-gradient(180deg, #970d2f, #860626, $luxury);
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  // uncomment this if you want activate gradient animations (rest @keyframes at the end of file)
+  // -webkit-animation: AnimationName 40s ease infinite;
+  // -moz-animation: AnimationName 40s ease infinite;
+  // -o-animation: AnimationName 40s ease infinite;
+  // animation: AnimationName 40s ease infinite;
 }
 
 .container {
@@ -20,3 +26,16 @@
   width: 100%;
   z-index: 0;
 }
+
+// if you want animations of background gradient - uncomment it!
+// @keyframes AnimationName {
+//   0% {
+//     background-position: 77% 0%;
+//   }
+//   50% {
+//     background-position: 24% 100%;
+//   }
+//   100% {
+//     background-position: 77% 0%;
+//   }
+// }

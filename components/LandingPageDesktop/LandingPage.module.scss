@@ -4,25 +4,6 @@
   font-family: 'Teko', sans-serif;
   color: $white;
 
-  .background {
-    background: linear-gradient(180deg, #970d2f, #000000);
-    background-size: 600% 600%;
-
-    // uncomment this if you want activate gradient animations (rest @keyframes at the end of file)
-    // -webkit-animation: AnimationName 40s ease infinite;
-    // -moz-animation: AnimationName 40s ease infinite;
-    // -o-animation: AnimationName 40s ease infinite;
-    // animation: AnimationName 40s ease infinite;
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-  }
-
   .card {
     display: flex;
     justify-content: center;
@@ -95,10 +76,10 @@
 
     img {
       width: 50vw;
+      height: 50vh;
       height: auto;
       opacity: 1;
       cursor: pointer;
-      z-index: 20000000000000;
       object-fit: cover;
 
       &:hover {
@@ -185,16 +166,3 @@
     }
   }
 }
-
-// if you want animations of background gradient - uncomment it!
-// @keyframes AnimationName {
-//   0% {
-//     background-position: 77% 0%;
-//   }
-//   50% {
-//     background-position: 24% 100%;
-//   }
-//   100% {
-//     background-position: 77% 0%;
-//   }
-// }

@@ -9,7 +9,6 @@ const LandingPageDesktop = (): JSX.Element => {
 
   return (
     <main className={styles.main}>
-      <div className={styles.background} />
       <Parallax pages={5}>
         <ParallaxLayer
           offset={0}
