@@ -10,6 +10,7 @@
   font-size: 30vw;
   font-family: 'Teko Bold';
   font-weight: bold;
+  height: 100vh;
 
   p {
     font-size: 30px;
@@ -24,6 +25,7 @@
     position: relative;
     animation: scrolldown 1.2s infinite;
     -webkit-animation: scrolldown 1.2s infinite;
+    cursor: pointer;
 
     &::before {
       content: '';

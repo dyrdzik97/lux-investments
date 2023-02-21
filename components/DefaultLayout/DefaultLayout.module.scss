@@ -11,16 +11,12 @@
   font-family: 'Teko', sans-serif;
   font-size: 25px;
   background-color: $luxury;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .container {
   display: block;
   width: 100%;
   z-index: 0;
-}
-
-@media (max-width: 780px) {
-  .main {
-    overflow: scroll;
-  }
 }

@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import { useAuth } from '../components/FireBaseAuth/context/AuthContext'
-import LandingPage from '../components/LandingPage/LandingPage'
+import MobileView from '../components/Views/MobileView/MobileView'
+import BrowserView from '../components/Views/BrowserView/BrowserView'
+import LandingPageMobile from '../components/LandingPageMobile/LandingPageMobile'
+import LandingPageDesktop from '../components/LandingPageDesktop/LandingPage'
 
 const Home = () => {
   return (
@@ -14,7 +17,12 @@ const Home = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-      <LandingPage />
+      <MobileView>
+        <LandingPageMobile />
+      </MobileView>
+      <BrowserView>
+        <LandingPageDesktop />
+      </BrowserView>
     </>
   )
 }

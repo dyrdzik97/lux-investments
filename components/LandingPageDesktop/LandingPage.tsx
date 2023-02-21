@@ -4,7 +4,7 @@ import styles from './LandingPage.module.scss'
 import HeroHeader from '../HeroHeader/HeroHeader'
 import { SyntheticEvent } from 'react'
 
-const LandingPage = (): JSX.Element => {
+const LandingPageDesktop = (): JSX.Element => {
   const alignCenter = { display: 'flex', alignItems: 'center', zIndex: '-1' }
 
   return (
@@ -21,6 +21,7 @@ const LandingPage = (): JSX.Element => {
         <ParallaxLayer
           sticky={{ start: 1, end: 1.5 }}
           style={{ ...alignCenter, justifyContent: 'flex-start' }}
+          id={'info-section'}
         >
           <div
             className={`${styles.card} ${styles.sticky} ${styles['info-section']}`}
@@ -138,4 +139,4 @@ const LandingPage = (): JSX.Element => {
   )
 }
 
-export default LandingPage
+export default LandingPageDesktop
