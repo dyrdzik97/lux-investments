@@ -5,7 +5,7 @@ $text-color: rgba(255, 255, 255, 0.3);
 $bgr-color: #333;
 
 .sidebar {
-  overflow: scroll;
+  overflow: hidden;
   background-color: $luxury;
   position: fixed;
   top: 0;
