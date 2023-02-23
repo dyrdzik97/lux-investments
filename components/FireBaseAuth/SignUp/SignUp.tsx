@@ -121,7 +121,6 @@ const SignUp = ({ sx }: SignupProps): JSX.Element => {
                 >
                   Sign up
                 </Button>
-                {JSON.stringify(errors, touched)}
                 <Link href="/login">
                   <Text
                     sx={{
