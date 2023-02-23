@@ -23,23 +23,23 @@ export const getServerSideProps: GetStaticProps = async (context) => {
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await getDocs(collection(db, 'Offers')).then((querySnapshot) => {
-    return querySnapshot.docs.map((doc) => doc.data())
-  })
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const data = await getDocs(collection(db, 'Offers')).then((querySnapshot) => {
+//     return querySnapshot.docs.map((doc) => doc.data())
+//   })
 
-  const paths = data.map((item: any) => {
-    return {
-      params: {
-        product: item.url || '',
-      },
-    }
-  })
+//   const paths = data.map((item: any) => {
+//     return {
+//       params: {
+//         product: item.url || '',
+//       },
+//     }
+//   })
 
-  return {
-    paths,
-    fallback: false,
-  }
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   }
+// }
 
 export default Product
