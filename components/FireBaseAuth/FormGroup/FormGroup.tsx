@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { ErrorMessage } from 'formik'
 import { ThemeUIStyleObject, Box, Label } from 'theme-ui'
+import styles from './FormGroup.module.scss'
 
 export interface FormGroupProps {
   label: string
@@ -36,10 +37,8 @@ export const FormGroup = ({
       </Label>
       {children}
       {note ? <Box sx={{ variant: 'text.small', m: 1 }}>{note}</Box> : null}
-      <ErrorMessage name={name}>
-        {(msg) => (
-          <Box sx={{ m: 1, variant: 'text.small', color: 'error' }}>{msg}</Box>
-        )}
+      <ErrorMessage name={name} className={styles.error__message}>
+        {(msg) => <Box>{msg}</Box>}
       </ErrorMessage>
     </Box>
   )
