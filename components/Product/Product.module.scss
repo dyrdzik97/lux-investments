@@ -25,8 +25,8 @@
   display: block;
   min-height: 100%;
   max-width: 100%;
-  opacity: 0.8;
-  object-fit: cover;
+  opacity: 1;
+  object-fit: fill;
 }
 
 .grid figure figcaption {
@@ -78,7 +78,7 @@ figure.effect-apollo {
 }
 
 figure.effect-apollo img {
-  opacity: 0.95;
+  opacity: 1;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: scale3d(1.05, 1.05, 1);
