@@ -7,6 +7,7 @@ import { Input, Button, Textarea, Message, Spinner } from 'theme-ui'
 import { uuid } from 'uuidv4'
 import * as Yup from 'yup'
 import { convertStringProductUrl } from '../../hooks/convertStringProductUrl'
+import UploadIcon from '../../icons/UploadIcon'
 import { IImageProps, IFormProps } from '../../models'
 import { db } from '../../services/firebaseConfig'
 import { addImageToDatabaseAndReturnPhotoUrl } from '../../utils/addImageToDatabase'
@@ -115,6 +116,15 @@ const AddOfferForm = (): JSX.Element => {
     }
   }
 
+  const onDeleteImage = () => {
+    setImage({
+      name: '',
+      type: '',
+    })
+  }
+
+  console.warn(image)
+
   return (
     <div className={styles['add-offer']}>
       <div className={styles.description}>
@@ -208,21 +218,32 @@ const AddOfferForm = (): JSX.Element => {
                     />
                   </FormGroup>
                 </div>
-
-                <FormGroup label="Upload image" name="image">
-                  <Input
-                    sx={{
-                      borderColor: 'rgb(209, 218, 230)',
-                    }}
-                    {...getFieldProps('image')}
-                    type="file"
-                    // multiple
-                    value={undefined}
-                    id="image"
-                    required
-                    onChange={handleImage}
-                  />
-                </FormGroup>
+                <div className={styles['image__uploader']}>
+                  <FormGroup label="Upload image" name="image">
+                    <Input
+                      sx={{
+                        borderColor: 'rgb(209, 218, 230)',
+                      }}
+                      {...getFieldProps('image')}
+                      type="file"
+                      // multiple
+                      value={undefined}
+                      id="image"
+                      required
+                      onChange={handleImage}
+                    />
+                    <div className={styles['image__uploader--field']}>
+                      {!image.name ? (
+                        <UploadIcon fillColor="#000" />
+                      ) : (
+                        <p>
+                          {image.name}
+                          <span onClick={onDeleteImage}>X</span>
+                        </p>
+                      )}
+                    </div>
+                  </FormGroup>
+                </div>
                 <button
                   type="submit"
                   className={styles['form-container__submit-button']}

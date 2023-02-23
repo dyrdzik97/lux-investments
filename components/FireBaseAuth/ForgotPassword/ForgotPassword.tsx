@@ -13,6 +13,7 @@ import { FormGroup } from '../FormGroup/FormGroup'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import { useAuth } from '../context/AuthContext'
 import { emailValidation } from '../validation'
+import { useRouter } from 'next/router'
 
 interface ForgotPasswordFormValues {
   email: string
@@ -25,6 +26,7 @@ export interface ForgotPasswordProps {
 export const ForgotPassword = ({ sx }: ForgotPasswordProps): JSX.Element => {
   const [message, setMessage] = useState('')
   const { resetPassword, setLoading, loading } = useAuth()
+  const router = useRouter()
 
   const handleSubmit = async (values: ForgotPasswordFormValues) => {
     try {
@@ -36,6 +38,10 @@ export const ForgotPassword = ({ sx }: ForgotPasswordProps): JSX.Element => {
     } finally {
       setLoading(false)
     }
+  }
+
+  const backToLogin = () => {
+    router.push('/login')
   }
 
   return (
@@ -74,7 +80,11 @@ export const ForgotPassword = ({ sx }: ForgotPasswordProps): JSX.Element => {
                     'Reset password'
                   )}
                 </Button>
-                <Button onClick={() => {}} sx={{ mt: 1, bg: '#3F8899' }}>
+                <Button
+                  type="button"
+                  onClick={backToLogin}
+                  sx={{ mt: 1, bg: '#3F8899' }}
+                >
                   Back to login
                 </Button>
               </Grid>

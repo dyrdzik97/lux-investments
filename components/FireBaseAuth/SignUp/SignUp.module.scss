@@ -1,0 +1,9 @@
+.signup-form {
+  width: 400px;
+  //   font-size: 0.5em;
+
+  button:disabled {
+    cursor: not-allowed;
+    pointer-events: all;
+  }
+}

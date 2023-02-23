@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {
   Input,
   ThemeUIStyleObject,
@@ -7,7 +7,7 @@ import {
   Text,
   Container,
 } from 'theme-ui'
-import { Form, Formik } from 'formik'
+import { ErrorMessage, Form, Formik, useField } from 'formik'
 import { FormGroup } from '../FormGroup/FormGroup'
 import { BorderWrapper } from '../BorderWrapper/BorderWrapper'
 import { useAuth } from '../context/AuthContext'
@@ -17,6 +17,8 @@ import Link from 'next/link'
 import { db } from '../../../services/firebaseConfig'
 import { addDoc, collection } from 'firebase/firestore'
 import { useRouter } from 'next/router'
+import styles from './SignUp.module.scss'
+import { json } from 'stream/consumers'
 
 interface SignupFormValues {
   email: string
@@ -25,7 +27,10 @@ interface SignupFormValues {
 }
 
 const SignUpSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Required'),
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Required')
+    .typeError('Test'),
   password: passwordValidation,
   repeatPassword: Yup.string().when('password', {
     is: (val: string) => val && val.length > 0,
@@ -53,7 +58,7 @@ const SignUp = ({ sx }: SignupProps): JSX.Element => {
       })
       router.push('/catalog')
     } catch (error) {
-      console.log('errprrrr', error)
+      throw new Error(`${error}`)
     } finally {
       setLoading(false)
     }
@@ -71,8 +76,8 @@ const SignUp = ({ sx }: SignupProps): JSX.Element => {
           onSubmit={(values) => handleSubmit(values)}
           validationSchema={SignUpSchema}
         >
-          {({ getFieldProps }) => (
-            <Form>
+          {({ getFieldProps, errors, touched }) => (
+            <Form className={styles['signup-form']}>
               <FormGroup label="Email address" name="email">
                 <Input
                   sx={{ borderColor: 'rgb(209, 218, 230)' }}
@@ -104,16 +109,26 @@ const SignUp = ({ sx }: SignupProps): JSX.Element => {
                 <Button
                   type="submit"
                   sx={{ mt: 1, bg: '#3F88F5' }}
-                  disabled={loading}
+                  disabled={
+                    loading ||
+                    (touched.email !== false &&
+                      touched.password !== false &&
+                      touched.repeatPassword &&
+                      errors.email === undefined &&
+                      errors.password === undefined &&
+                      errors.repeatPassword === undefined)
+                  }
                 >
                   Sign up
                 </Button>
+                {JSON.stringify(errors, touched)}
                 <Link href="/login">
                   <Text
                     sx={{
                       display: 'inline-block',
                       textDecoration: 'none',
                       color: '#3F88F5',
+                      textAlign: 'center',
                     }}
                   >
                     Do you already have an account? Please login in here.

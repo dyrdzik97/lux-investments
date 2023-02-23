@@ -86,6 +86,10 @@
         transition: opacity 0.4s ease-in-out;
       }
     }
+
+    &__container {
+      margin-bottom: 160px;
+    }
   }
 
   .call-to-action-buttons {

@@ -68,7 +68,11 @@ const LandingPageDesktop = (): JSX.Element => {
             </div>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.4} speed={-0.1}>
+        <ParallaxLayer
+          offset={2.4}
+          speed={-0.1}
+          className={styles['image-tiles__container']}
+        >
           <div className={styles['image-tiles']}>
             <img src="https://media.istockphoto.com/id/682432560/photo/stunning-luxury-home-exterior-at-sunset.jpg?b=1&s=170667a&w=0&k=20&c=So4g7mqh3Ajo112hyKO2YxIBVn5Ei34SEf2vSmwhp6A=" />
             <img src="https://media.istockphoto.com/photos/beautiful-luxury-home-exterior-at-sunset-featuring-large-covered-picture-id1208206114?b=1&k=20&m=1208206114&s=612x612&w=0&h=fVbIm4ZPRy5h81cippbpEOSw4CAUxHmZo6ayBaKlcn4=" />
