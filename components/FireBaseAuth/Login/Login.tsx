@@ -56,6 +56,7 @@ export const Login = ({ sx }: LoginProps): JSX.Element => {
             }
           }}
           validationSchema={LoginSchema}
+          validateOnBlur={false}
         >
           {({ getFieldProps, errors }) => (
             <Form className={styles.login}>

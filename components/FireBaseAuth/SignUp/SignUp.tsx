@@ -75,6 +75,7 @@ const SignUp = ({ sx }: SignupProps): JSX.Element => {
           }}
           onSubmit={(values) => handleSubmit(values)}
           validationSchema={SignUpSchema}
+          validateOnBlur={false}
         >
           {({ getFieldProps, errors, touched }) => (
             <Form className={styles['signup-form']}>

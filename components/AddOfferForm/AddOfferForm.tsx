@@ -65,35 +65,35 @@ const AddOfferForm = (): JSX.Element => {
 
     if (!selectedFile) {
       return
-    }
-
-    reader.readAsDataURL(selectedFile)
-    reader.onload = (e: any) => {
-      const image = new Image()
-      image.src = e.target.result
-
-      image.onload = () => {
-        const { height, width } = image
-
-        if (height >= 500 || width >= 500) {
-          return false
-        }
-        alert('Uploaded image has valid Height and Width (min 500x500px).')
-        return true
-      }
-    }
-
-    if (selectedFile) {
-      setImage(selectedFile)
-      handleMessage('successMessage', 'Image added')
     } else {
-      handleMessage('imageError', 'Select correct photo')
-    }
+      reader.readAsDataURL(selectedFile)
+      reader.onload = (e: any) => {
+        const image = new Image()
+        image.src = e.target.result
 
-    setTimeout(() => {
-      handleMessage('successMessage', '')
-      handleMessage('imageError', '')
-    }, 2000)
+        image.onload = () => {
+          const { height, width } = image
+
+          if (height >= 500 || width >= 500) {
+            return false
+          }
+          alert('Uploaded image has valid Height and Width (min 500x500px).')
+          return true
+        }
+      }
+
+      if (selectedFile) {
+        setImage(selectedFile)
+        handleMessage('successMessage', 'Image added')
+      } else {
+        handleMessage('imageError', 'Select correct photo')
+      }
+
+      setTimeout(() => {
+        handleMessage('successMessage', '')
+        handleMessage('imageError', '')
+      }, 2000)
+    }
   }
 
   const onSendOffer = async (values: IFormProps) => {

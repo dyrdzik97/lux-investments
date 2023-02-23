@@ -54,6 +54,7 @@ export const ForgotPassword = ({ sx }: ForgotPasswordProps): JSX.Element => {
           }}
           onSubmit={(values) => handleSubmit(values)}
           validationSchema={emailValidation}
+          validateOnBlur={false}
         >
           {({ getFieldProps }) => (
             <Form>
