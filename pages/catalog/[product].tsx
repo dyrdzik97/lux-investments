@@ -7,7 +7,7 @@ const Product = ({ product }: any) => {
   return <SingleProduct product={product} />
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetStaticProps = async (context) => {
   const { params = {} } = context
 
   const data = await getDocs(collection(db, 'Offers')).then((querySnapshot) => {
