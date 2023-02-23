@@ -65,6 +65,10 @@ const AddOfferForm = (): JSX.Element => {
 
     // walidacja czy zdj istnieje -error z blobem dla pistego inputa
 
+    if (!selectedFile) {
+      return
+    }
+
     reader.readAsDataURL(selectedFile)
     reader.onload = (e: any) => {
       const image = new Image()
@@ -72,13 +76,11 @@ const AddOfferForm = (): JSX.Element => {
 
       image.onload = () => {
         const { height, width } = image
-        console.log(height, width)
 
-        if (height > 500 || width > 500) {
-          alert('Height and Width must not exceed 100px.')
+        if (height >= 500 || width >= 500) {
           return false
         }
-        alert('Uploaded image has valid Height and Width.')
+        alert('Uploaded image has valid Height and Width (min 500x500px).')
         return true
       }
     }
