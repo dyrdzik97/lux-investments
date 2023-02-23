@@ -63,8 +63,6 @@ const AddOfferForm = (): JSX.Element => {
 
     const reader = new FileReader()
 
-    // walidacja czy zdj istnieje -error z blobem dla pistego inputa
-
     if (!selectedFile) {
       return
     }
