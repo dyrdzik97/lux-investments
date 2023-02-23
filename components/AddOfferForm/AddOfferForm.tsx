@@ -61,6 +61,24 @@ const AddOfferForm = (): JSX.Element => {
   const handleImage = async (evt: any) => {
     const selectedFile = evt.target.files[0]
 
+    const reader = new FileReader()
+
+    reader.readAsDataURL(selectedFile)
+    reader.onload = (e) => {
+      const image = new Image(selectedFile)
+
+      image.onload = () => {
+        const { height, width } = image
+
+        if (height > 500 || width > 500) {
+          alert('Height and Width must not exceed 100px.')
+          return false
+        }
+        alert('Uploaded image has valid Height and Width.')
+        return true
+      }
+    }
+
     if (selectedFile) {
       setImage(selectedFile)
       handleMessage('successMessage', 'Image added')
@@ -122,8 +140,6 @@ const AddOfferForm = (): JSX.Element => {
       type: '',
     })
   }
-
-  console.warn(image)
 
   return (
     <div className={styles['add-offer']}>

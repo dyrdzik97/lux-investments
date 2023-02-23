@@ -87,5 +87,16 @@ $bgr-color: #333;
 @media (max-width: 780px) {
   .sidebar {
     width: 100vw;
+    font-size: 1.5em;
+
+    &__content {
+      padding: 60px 20px;
+      a,
+      span {
+        p {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }

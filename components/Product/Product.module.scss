@@ -209,4 +209,21 @@ figure.effect-apollo:hover p {
     opacity: 1;
     margin: 2em;
   }
+
+  figure.effect-apollo:hover figcaption::before {
+    transform: none;
+    display: none;
+  }
+
+  .product {
+    &:hover {
+      transition: none;
+      will-change: unset;
+    }
+  }
+
+  figure.effect-apollo:hover img {
+    opacity: 1;
+    transform: none;
+  }
 }
