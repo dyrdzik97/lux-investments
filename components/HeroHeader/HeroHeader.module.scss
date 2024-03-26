@@ -11,6 +11,7 @@
   font-family: 'Teko Bold';
   font-weight: bold;
   height: 100vh;
+  animation: fadeIn 2s;
 
   p {
     font-size: 30px;
@@ -51,4 +52,9 @@
       transform: translate(0);
     }
   }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

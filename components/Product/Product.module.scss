@@ -13,6 +13,7 @@
   float: left;
   overflow: hidden;
   height: auto;
+  width: 100%;
   background: $luxury;
   text-align: center;
   cursor: pointer;
@@ -26,7 +27,7 @@
   min-height: 100%;
   max-width: 100%;
   opacity: 1;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .grid figure figcaption {
@@ -83,6 +84,7 @@ figure.effect-apollo img {
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: scale3d(1.05, 1.05, 1);
   transform: scale3d(1.05, 1.05, 1);
+  width: 100%;
 }
 
 figure.effect-apollo figcaption::before {
@@ -123,6 +125,7 @@ figure.effect-apollo:hover img {
   opacity: 0.6;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
+  width: 100%;
 }
 
 figure.effect-apollo:hover figcaption::before {
@@ -172,6 +175,7 @@ figure.effect-apollo:hover p {
   &__image {
     background-repeat: round;
     max-width: 100%;
+    width: 100%;
 
     img {
       object-fit: contain;

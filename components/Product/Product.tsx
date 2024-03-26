@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from './Product.module.scss'
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./Product.module.scss";
 
 interface IProductProps {
-  item: any
+  item: any;
 }
 
 const Product = ({ item }: IProductProps): JSX.Element => {
@@ -11,7 +11,7 @@ const Product = ({ item }: IProductProps): JSX.Element => {
     <Link href={`/catalog/${item.url}`} passHref>
       <div className={styles.content}>
         <div className={styles.grid}>
-          <figure className={styles['effect-apollo']}>
+          <figure className={styles["effect-apollo"]}>
             <Image
               src={item.image}
               alt={item.offerName}
@@ -27,7 +27,7 @@ const Product = ({ item }: IProductProps): JSX.Element => {
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

@@ -1,11 +1,10 @@
-import Link from 'next/link'
-import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
-import styles from './LandingPage.module.scss'
-import HeroHeader from '../HeroHeader/HeroHeader'
-import { SyntheticEvent } from 'react'
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import Link from "next/link";
+import HeroHeader from "../HeroHeader/HeroHeader";
+import styles from "./LandingPage.module.scss";
 
 const LandingPageDesktop = (): JSX.Element => {
-  const alignCenter = { display: 'flex', alignItems: 'center', zIndex: '-1' }
+  const alignCenter = { display: "flex", alignItems: "center", zIndex: "-1" };
 
   return (
     <main className={styles.main}>
@@ -13,17 +12,17 @@ const LandingPageDesktop = (): JSX.Element => {
         <ParallaxLayer
           offset={0}
           speed={0.3}
-          style={{ ...alignCenter, justifyContent: 'center' }}
+          style={{ ...alignCenter, justifyContent: "center" }}
         >
           <HeroHeader />
         </ParallaxLayer>
         <ParallaxLayer
           sticky={{ start: 1, end: 1.5 }}
-          style={{ ...alignCenter, justifyContent: 'flex-start' }}
-          id={'info-section'}
+          style={{ ...alignCenter, justifyContent: "flex-start" }}
+          id={"info-section"}
         >
           <div
-            className={`${styles.card} ${styles.sticky} ${styles['info-section']}`}
+            className={`${styles.card} ${styles.sticky} ${styles["info-section"]}`}
           >
             <span>
               <span>what</span>
@@ -36,15 +35,15 @@ const LandingPageDesktop = (): JSX.Element => {
         <ParallaxLayer
           offset={1}
           speed={1}
-          style={{ ...alignCenter, justifyContent: 'flex-end' }}
+          style={{ ...alignCenter, justifyContent: "flex-end" }}
         >
           <div
             style={{
-              width: '100%',
-              display: 'flex',
-              alignItems: 'flex-end',
-              flexDirection: 'column',
-              gap: '10px',
+              width: "100%",
+              display: "flex",
+              alignItems: "flex-end",
+              flexDirection: "column",
+              gap: "10px",
             }}
           >
             <div
@@ -71,23 +70,25 @@ const LandingPageDesktop = (): JSX.Element => {
         <ParallaxLayer
           offset={2.4}
           speed={-0.1}
-          className={styles['image-tiles__container']}
+          className={styles["image-tiles__container"]}
         >
-          <div className={styles['image-tiles']}>
-            <img src="https://media.istockphoto.com/id/682432560/photo/stunning-luxury-home-exterior-at-sunset.jpg?b=1&s=170667a&w=0&k=20&c=So4g7mqh3Ajo112hyKO2YxIBVn5Ei34SEf2vSmwhp6A=" />
-            <img src="https://media.istockphoto.com/photos/beautiful-luxury-home-exterior-at-sunset-featuring-large-covered-picture-id1208206114?b=1&k=20&m=1208206114&s=612x612&w=0&h=fVbIm4ZPRy5h81cippbpEOSw4CAUxHmZo6ayBaKlcn4=" />
-          </div>
-          <div className={styles['image-tiles']}>
-            <img src="https://media.istockphoto.com/id/1026205392/photo/beautiful-luxury-home-exterior-at-twilight.jpg?s=612x612&w=0&k=20&c=HOCqYY0noIVxnp5uQf1MJJEVpsH_d4WtVQ6-OwVoeDo=" />
-            <img src="https://media.istockphoto.com/id/1219368329/photo/3d-rendering-of-modern-house-with-wood-plank-facade-in-night.jpg?s=612x612&w=0&k=20&c=gISwxOxE0TXordfyRo8g9lyyLzLIlXgl21HKhypEFqo=" />
-          </div>
+          <Link href="/catalog">
+            <div className={styles["image-tiles"]}>
+              <img src="https://media.istockphoto.com/id/682432560/photo/stunning-luxury-home-exterior-at-sunset.jpg?b=1&s=170667a&w=0&k=20&c=So4g7mqh3Ajo112hyKO2YxIBVn5Ei34SEf2vSmwhp6A=" />
+              <img src="https://media.istockphoto.com/photos/beautiful-luxury-home-exterior-at-sunset-featuring-large-covered-picture-id1208206114?b=1&k=20&m=1208206114&s=612x612&w=0&h=fVbIm4ZPRy5h81cippbpEOSw4CAUxHmZo6ayBaKlcn4=" />
+            </div>
+            <div className={styles["image-tiles"]}>
+              <img src="https://media.istockphoto.com/id/1026205392/photo/beautiful-luxury-home-exterior-at-twilight.jpg?s=612x612&w=0&k=20&c=HOCqYY0noIVxnp5uQf1MJJEVpsH_d4WtVQ6-OwVoeDo=" />
+              <img src="https://media.istockphoto.com/id/1219368329/photo/3d-rendering-of-modern-house-with-wood-plank-facade-in-night.jpg?s=612x612&w=0&k=20&c=gISwxOxE0TXordfyRo8g9lyyLzLIlXgl21HKhypEFqo=" />
+            </div>
+          </Link>
         </ParallaxLayer>
         <ParallaxLayer
           offset={3.5}
           speed={0.2}
-          style={{ ...alignCenter, justifyContent: 'flex-end' }}
+          style={{ ...alignCenter, justifyContent: "flex-end" }}
         >
-          <div className={styles['call-to-action-buttons__container']}>
+          <div className={styles["call-to-action-buttons__container"]}>
             <Link href="/catalog">Checkout offers</Link>
             <Link href="/login">Create account/login</Link>
           </div>
@@ -95,7 +96,7 @@ const LandingPageDesktop = (): JSX.Element => {
         <ParallaxLayer
           sticky={{ start: 4, end: 4 }}
           offset={5}
-          style={{ ...alignCenter, justifyContent: 'flex-start' }}
+          style={{ ...alignCenter, justifyContent: "flex-start" }}
         >
           <div className={styles.contact}>
             <span>Stay in touch!</span>
@@ -104,7 +105,7 @@ const LandingPageDesktop = (): JSX.Element => {
         <ParallaxLayer
           offset={4}
           speed={1.5}
-          style={{ ...alignCenter, justifyContent: 'flex-end' }}
+          style={{ ...alignCenter, justifyContent: "flex-end" }}
         >
           <div
             className={`${styles.card} ${styles.parallax} ${styles.contact__details}`}
@@ -119,15 +120,15 @@ const LandingPageDesktop = (): JSX.Element => {
             </span>
 
             <span className={styles.footer}>
-              Proudly delivered by{' '}
-              <Link href={'https://github.com/dyrdzik97'}>dyrdzik97</Link>©
+              Proudly delivered by{" "}
+              <Link href={"https://github.com/dyrdzik97"}>dyrdzik97</Link>©
               Copyright 2023
             </span>
           </div>
         </ParallaxLayer>
       </Parallax>
     </main>
-  )
-}
+  );
+};
 
-export default LandingPageDesktop
+export default LandingPageDesktop;

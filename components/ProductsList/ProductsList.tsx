@@ -1,20 +1,23 @@
-import { collection, getDocs, getFirestore } from 'firebase/firestore'
-import { useEffect } from 'react'
-import Product from '../Product/Product'
-import styles from './ProductsList.module.scss'
+import { IOfferModel } from "../../models";
+import Product from "../Product/Product";
+import styles from "./ProductsList.module.scss";
 
-const ProductsList = ({ offers }: any) => {
+interface IProductsList {
+  offers: IOfferModel[];
+}
+
+const ProductsList = ({ offers }: IProductsList) => {
   return (
-    <div className={styles['products-list']}>
+    <div className={styles["products-list"]}>
       {offers && offers.length !== 0 ? (
-        offers.map((offer: any, index: number) => {
-          return <Product item={offer} key={index} />
+        offers.map((offer: IOfferModel, index: number) => {
+          return <Product item={offer} key={index} />;
         })
       ) : (
         <div>List of products is empty, try again later 🤓</div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ProductsList
+export default ProductsList;
