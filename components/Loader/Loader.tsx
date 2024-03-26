@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "./Loader.module.scss";
 
-const LOADER_THRESHOLD = 1000;
+const LOADER_THRESHOLD = 200;
 
 const Loader = () => {
   const [isLoading, setLoading] = useState(false);

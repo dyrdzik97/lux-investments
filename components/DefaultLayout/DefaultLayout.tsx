@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { FC, PropsWithChildren, useState } from "react";
 import { ISideBarItem } from "../../models";
 import { useAuth } from "../FireBaseAuth/context/AuthContext";
-import Loader from "../Loader/Loader";
 import Navigation from "../Navigation/Navigation";
 import styles from "./DefaultLayout.module.scss";
 
@@ -62,7 +61,6 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <main className={styles.main}>
-      <Loader />
       <Navigation onClick={onMoveSidebar} open={open} items={sideBarItems} />
       <div className={styles.container}>{children}</div>
     </main>
