@@ -1,5 +1,3 @@
-"use client";
-import { Suspense } from "react";
 import { IOfferModel } from "../../models";
 import Product from "../Product/Product";
 import styles from "./ProductsList.module.scss";
@@ -13,11 +11,7 @@ const ProductsList = ({ offers }: IProductsList) => {
     <div className={styles["products-list"]}>
       {offers && offers.length !== 0 ? (
         offers.map((offer: IOfferModel, index: number) => {
-          return (
-            <Suspense fallback={<div>loading...</div>} key={index}>
-              <Product item={offer} key={index} />
-            </Suspense>
-          );
+          return <Product item={offer} key={index} />;
         })
       ) : (
         <div>List of products is empty, try again later 🤓</div>

@@ -1,7 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
 import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import { IOfferModel } from "../models";
 import { db } from "../services/firebaseConfig";
 
@@ -17,11 +16,7 @@ interface ICatalog {
 }
 
 const Catalog = ({ offers }: ICatalog) => {
-  return (
-    <Suspense fallback={<div>Loading catalog...</div>}>
-      <ProductsList offers={offers} />
-    </Suspense>
-  );
+  return <ProductsList offers={offers} />;
 };
 
 export const getServerSideProps: GetStaticProps = async () => {
