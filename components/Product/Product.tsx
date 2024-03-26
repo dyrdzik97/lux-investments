@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./Product.module.scss";
 
@@ -12,12 +11,11 @@ const Product = ({ item }: IProductProps): JSX.Element => {
       <div className={styles.content}>
         <div className={styles.grid}>
           <figure className={styles["effect-apollo"]}>
-            <Image
+            <img
               src={item.image}
               alt={item.offerName}
               width={550}
               height={550}
-              priority
             />
             <figcaption>
               <h2>{item.offerName}</h2>
